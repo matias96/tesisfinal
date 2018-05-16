@@ -11,7 +11,7 @@
 		<?=$this->flash->render("auth")?>
                 <?=$this->form->create()?>
 			<fieldset>
-				<h1>Please Sign In</h1>
+				<h1>Ingrese sus datos</h1>
 				<hr class="colorgraph">
 				<div class="form-group">
                     <?= $this -> form -> imput ("username",["class"=> "form-control imput-lg","placeholder"=> "Username", "label"=> false,"required"]) ?>

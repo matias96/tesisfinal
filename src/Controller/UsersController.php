@@ -138,14 +138,18 @@ class UsersController extends AppController
         
         $this->render();
     }
-    
+         public function transferswines() {
+        
+        $this->render();
+    }
     public function isAuthorized($user) 
             {
         if (isset($user["role"])and $user["role"] === "alumno"){
-            if(in_array($this -> request -> action, ["solover","logout","menu","adduser"]))
+            if(in_array($this -> request -> action, ["solover","logout","menu","add","transferswines"]))
             {
             return true;
         }
+        
      
     }
     return parent::isAuthorized($user);

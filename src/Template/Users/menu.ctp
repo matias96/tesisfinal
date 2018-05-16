@@ -13,11 +13,13 @@
             <span class="glyphicon glyphicon-book"></span>
           </div>
           <div class="featureinfo">
-            <h4 class="text-center">Title</h4>
+            <h4 class="text-center">Lista de Vinos</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!
+              En el siguiente apartado podemos encontrar la diferente variedad de vinos a granel que tenemos en nuestro sitio web para ofrecer a nuestros usuarios
             </p>
-            <a class="btn btn-default btn-sm" href="#" role="button">View Page »</a>
+            <?= $this->html->link("Adminstrar Vinos",["controller"=>"vinos","action"=>"Index",],["class" =>"btn btn-default btn-sm"]) ?>
+            <?= $this->html->link("Lista de Vinos",["controller"=>"vinos","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
+          
           </div>
         </div>
       </div>
@@ -27,11 +29,11 @@
             <span class="glyphicon glyphicon-tasks"></span>
           </div>
           <div class="featureinfo">
-            <h4 class="text-center">Title</h4>
+            <h4 class="text-center">Nuevo Vino</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!
+              Comparti tus vinos con los demas usuarios y danos a conocer la calidad de tus productos
             </p>
-            <a class="btn btn-default btn-sm" href="#" role="button">View Page »</a>
+            <?= $this->html->link("Crear Nuevo",["controller"=>"vinos","action"=>"add",],["class" =>"btn btn-default btn-sm"]) ?>
           </div>
         </div>
       </div>
@@ -43,11 +45,11 @@
             <span class="glyphicon glyphicon-comment"></span>
           </div>
           <div class="featureinfo">
-            <h4 class="text-center">Title</h4>
+            <h4 class="text-center">Conoce mas sobre Nosotros</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!
             </p>
-            <a class="btn btn-default btn-sm" href="#" role="button">View Page »</a>
+             <?= $this->html->link("Nuestra Empresa",["controller"=>"users","action"=>"transferswines",],["class" =>"btn btn-default btn-sm"]) ?>
           </div>
         </div>
       </div>
@@ -57,11 +59,12 @@
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="featureinfo">
-            <h4 class="text-center">Title</h4>
+            <h4 class="text-center">Mi Perfil</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!
+              En la siguiente opcion el usuario podra cambiar y actualizar sus datos a gusto
             </p>
-          <?= $this->html->link("Vinos",["controller"=>"vinos","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
+          <?= $this->html->link("Administrar Usuarios",["controller"=>"users","action"=>"index",],["class" =>"btn btn-default btn-sm"]) ?>
+         <?= $this->html->link("Usuarios",["controller"=>"users","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
           </div>
         </div>
       </div>
