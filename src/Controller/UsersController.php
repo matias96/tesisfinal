@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -30,7 +32,15 @@ class UsersController extends AppController
             }
         }
     }
+    
+     
     public function index()
+    {
+        $users = $this->paginate($this->Users);
+
+        $this->set(compact('users'));
+    }
+    public function solover()
     {
         $users = $this->paginate($this->Users);
 
@@ -124,4 +134,21 @@ class UsersController extends AppController
         
         $this->render();
     }
+      public function menu() {
+        
+        $this->render();
+    }
+    
+    public function isAuthorized($user) 
+            {
+        if (isset($user["role"])and $user["role"] === "alumno"){
+            if(in_array($this -> request -> action, ["solover","logout","menu","adduser"]))
+            {
+            return true;
+        }
+     
+    }
+    return parent::isAuthorized($user);
+
+            }
 }

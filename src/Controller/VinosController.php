@@ -27,6 +27,16 @@ class VinosController extends AppController
 
         $this->set(compact('vinos'));
     }
+    
+    public function solover()
+    {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
+        $vinos = $this->paginate($this->Vinos);
+
+        $this->set(compact('vinos'));
+    }
 
     /**
      * View method
@@ -64,7 +74,21 @@ class VinosController extends AppController
         $users = $this->Vinos->Users->find('list', ['limit' => 200]);
         $this->set(compact('vino', 'users'));
     }
+ public function adduser()
+    {
+        $vino = $this->Vinos->newEntity();
+        if ($this->request->is('post')) {
+            $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
+            if ($this->Vinos->save($vino)) {
+                $this->Flash->success(__('The vino has been saved.'));
 
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The vino could not be saved. Please, try again.'));
+        }
+        $users = $this->Vinos->Users->find('list', ['limit' => 200]);
+        $this->set(compact('vino', 'users'));
+    }
     /**
      * Edit method
      *
@@ -109,4 +133,17 @@ class VinosController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function isAuthorized($user) 
+            {
+        if (isset($user["role"])and $user["role"] === "alumno"){
+            if(in_array($this -> request -> action, ["solover","logout","home","add"]))
+            {
+            return true;
+        }
+     
+    }
+    return parent::isAuthorized($user);
+
+            }
 }
