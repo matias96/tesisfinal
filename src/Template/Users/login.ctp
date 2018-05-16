@@ -32,3 +32,21 @@
 			</fieldset>
 		<?=$this->form->end()?>
 	</div>
+<?= $this -> Html -> css("transferswines")?>
+ <li>
+      <div class="circle">
+        <div class="front front-popular">
+          <div class="title color-1-font glyphicon glyphicon-star"></div>
+          <div class="price color-1-font"><span class="total">Transfers Wines</span></div>
+          <div class="description"></div>
+        </div><!-- end div .front -->
+        <div class="popular color-1-font glyphicon glyphicon-star"></div>
+        <div class="back color-1-bg info">
+          <div class="title">Somos...</div>
+          <div class="description">
+            <p>Una empresa encargada de la compra y venta de vinos a granel</p>
+     
+          </div><!-- end div .description -->
+        </div><!-- end div .back color-1-bg info -->
+      </div><!-- end div .circle -->
+    </li>
