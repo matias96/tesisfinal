@@ -45,6 +45,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <ul class="right">
                 <li>Hola <?= $current_user["nombre"] ?> <li>
                 <li><?= $this->html->link ("Cerrar Sesion",["controller"=>"users","action"=> "logout"]) ?> </li>
+                  <li><?= $this->html->link ("Menu",["controller"=>"users","action"=> "menu"]) ?> </li>
                 
             </ul>
         </div>

@@ -47,7 +47,7 @@
           <div class="featureinfo">
             <h4 class="text-center">Conoce mas sobre Nosotros</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!
+              Te brindamos ayuda las 24 horas del dia, para que te sientas siempre acompañado y seguro a la hora de tomar tus deciciones. En este sitio podras encontrar informacion sobre quienes somos y diferentes formas de localizarnos 
             </p>
              <?= $this->html->link("Nuestra Empresa",["controller"=>"users","action"=>"transferswines",],["class" =>"btn btn-default btn-sm"]) ?>
           </div>
@@ -59,9 +59,9 @@
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="featureinfo">
-            <h4 class="text-center">Mi Perfil</h4>
+            <h4 class="text-center">Usuarios</h4>
             <p>
-              En la siguiente opcion el usuario podra cambiar y actualizar sus datos a gusto
+              Te brindamos informacion sobre los demas usuarios para que te puedas contactar de manera directa y sin interrupciones
             </p>
           <?= $this->html->link("Administrar Usuarios",["controller"=>"users","action"=>"index",],["class" =>"btn btn-default btn-sm"]) ?>
          <?= $this->html->link("Usuarios",["controller"=>"users","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
