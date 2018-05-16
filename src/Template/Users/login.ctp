@@ -14,10 +14,10 @@
 				<h1>Ingrese sus datos</h1>
 				<hr class="colorgraph">
 				<div class="form-group">
-                    <?= $this -> form -> imput ("username",["class"=> "form-control imput-lg","placeholder"=> "Username", "label"=> false,"required"]) ?>
+                     <input type="username" name="username" id="username" class="form-control input-lg" placeholder="username">
 				</div>
 				<div class="form-group">
-                    <?= $this -> form -> imput ("password",["class"=> "form-control imput-lg","placeholder"=> "Password", "label"=> false,"required"]) ?>
+                     <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
 				</div>
 				
 				<hr class="colorgraph">
@@ -42,9 +42,9 @@
         </div><!-- end div .front -->
         <div class="popular color-1-font glyphicon glyphicon-star"></div>
         <div class="back color-1-bg info">
-          <div class="title">Somos...</div>
+          <div class="title">Misión</div>
           <div class="description">
-            <p>Una empresa encargada de la compra y venta de vinos a granel</p>
+            <p>Promover la compra-venta de vino a granel y/o fraccionado a través de un sistema Web, lo que permitirá una mayor oferta y demanda dentro del rubro vitivinícola en el área local y poder comparar fácilmente todos los vinos disponibles en el mercado</p>
      
           </div><!-- end div .description -->
         </div><!-- end div .back color-1-bg info -->
