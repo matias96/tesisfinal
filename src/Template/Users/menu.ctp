@@ -17,7 +17,10 @@
             <p>
               En el siguiente apartado podemos encontrar la diferente variedad de vinos a granel que tenemos en nuestro sitio web para ofrecer a nuestros usuarios
             </p>
+<?php if (isset($current_user["role"]) and $current_user["role"] === "admin"):?>
             <?= $this->html->link("Adminstrar Vinos",["controller"=>"vinos","action"=>"Index",],["class" =>"btn btn-default btn-sm"]) ?>
+
+<?php endif;?>
             <?= $this->html->link("Lista de Vinos",["controller"=>"vinos","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
           
           </div>

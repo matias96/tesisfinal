@@ -58,4 +58,10 @@ class User extends Entity
             return (new DefaultPasswordHasher)->hash($password);
         }
     }
+     protected function _getTelefono($telefono)
+    {
+        if (strlen($telefono) > 0) {
+            return $telefono . "" ;
+        }
+    }
 }

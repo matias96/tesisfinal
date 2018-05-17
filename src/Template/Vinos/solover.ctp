@@ -44,7 +44,7 @@
                 <td><?= $this->Number->format($vino->extracto_seco) ?></td>
                 <td><?= $this->Number->format($vino->grado_brix) ?></td>
                 <td><?= $this->Number->format($vino->año_elavoracion) ?></td>
-                <td><?= $vino->has('user') ? $this->Html->link($vino->user->id, ['controller' => 'Users', 'action' => 'view', $vino->user->id]) : '' ?></td>
+                <td><?= $vino->has('user') ? $this->Html->link($vino->user->username, ['controller' => 'Users', 'action' => 'view', $vino->user->id]) : '' ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -27,7 +27,7 @@
             <tr>
                 <td><?= h($user->username) ?></td>
                 <td><?= h($user->nombre) ?></td>
-                <td><?= $this->Number->format($user->telefono) ?></td>
+                <td><?= h($user->telefono) ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
