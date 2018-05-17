@@ -6,16 +6,16 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Vinos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
+        <li><?= $this->Html->link(__('Lista de Vinos'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="vinos form large-9 medium-8 columns content">
     <?= $this->Form->create($vino) ?>
     <fieldset>
-        <legend><?= __('Add Vino') ?></legend>
+        <legend><?= __('Agregar Vino') ?></legend>
         <?php
             echo $this->Form->control('tipo_producto');
             echo $this->Form->control('variedad');
@@ -31,6 +31,6 @@
             echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Crear')) ?>
     <?= $this->Form->end() ?>
 </div>

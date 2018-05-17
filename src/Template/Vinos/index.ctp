@@ -6,10 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Vinos'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Acciones') ?></li>
+        <li><?= $this->Html->link(__('Nuevo Vino'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="vinos index large-9 medium-8 columns content">
@@ -54,9 +54,9 @@
                 <td><?= h($vino->created) ?></td>
                 <td><?= h($vino->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $vino->id_vino]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $vino->id_vino]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $vino->id_vino], ['confirm' => __('Are you sure you want to delete # {0}?', $vino->id_vino)]) ?>
+                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $vino->id_vino]) ?>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $vino->id_vino]) ?>
+                    <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $vino->id_vino], ['confirm' => __('Are you sure you want to delete # {0}?', $vino->id_vino)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

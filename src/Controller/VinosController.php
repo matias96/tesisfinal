@@ -136,7 +136,7 @@ class VinosController extends AppController
     
     public function isAuthorized($user) 
             {
-        if (isset($user["role"])and $user["role"] === "alumno"){
+        if (isset($user["role"])and $user["role"] === "usuario"){
             if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines"]))
             {
             return true;

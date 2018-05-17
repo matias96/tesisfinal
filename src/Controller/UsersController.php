@@ -32,6 +32,12 @@ class UsersController extends AppController
             }
         }
     }
+      public function beforeFilter(\Cake\Event\Event $event)
+    {
+         parent::beforeFilter($event);
+         $this->Auth->allow(["add"]);
+    }
+
     
      
     public function index()
@@ -73,12 +79,15 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->role= "usuario";
+            $user->activo= 0;
+            
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('Usuario guardado correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('Usuario no guardado, intente nuevamente.'));
         }
         $this->set(compact('user'));
     }
@@ -144,7 +153,7 @@ class UsersController extends AppController
     }
     public function isAuthorized($user) 
             {
-        if (isset($user["role"])and $user["role"] === "alumno"){
+        if (isset($user["role"])and $user["role"] === "usuario"){
             if(in_array($this -> request -> action, ["solover","logout","menu","add","transferswines"]))
             {
             return true;

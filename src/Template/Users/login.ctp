@@ -14,10 +14,10 @@
 				<h1>Ingrese sus datos</h1>
 				<hr class="colorgraph">
 				<div class="form-group">
-                     <input type="username" name="username" id="username" class="form-control input-lg" placeholder="username">
+                     <input type="username" name="username" id="username" class="form-control input-lg" placeholder="Usuario">
 				</div>
 				<div class="form-group">
-                     <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                     <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña">
 				</div>
 				
 				<hr class="colorgraph">

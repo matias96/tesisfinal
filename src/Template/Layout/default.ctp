@@ -36,18 +36,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
 
     <nav class="top-bar expanded" data-topbar role="navigation">
+        <?php if(isset($current_user)): ?>
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
                 <h1><a href=""><?= $this->fetch('title') ?></a></h1>
             </li>
         </ul>
+        <?php endif; ?>
         <div class="top-bar-section">
+            <?php if(isset($current_user)): ?>
             <ul class="right">
                 <li>Hola <?= $current_user["nombre"] ?> <li>
                 <li><?= $this->html->link ("Cerrar Sesion",["controller"=>"users","action"=> "logout"]) ?> </li>
                   <li><?= $this->html->link ("Menu",["controller"=>"users","action"=> "menu"]) ?> </li>
                 
             </ul>
+             <?php endif; ?>
         </div>
     </nav>
 
