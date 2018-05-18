@@ -53,6 +53,14 @@ class VinosController extends AppController
 
         $this->set('vino', $vino);
     }
+      public function viewuser($id = null)
+    {
+        $vino = $this->Vinos->get($id, [
+            'contain' => ['Users']
+        ]);
+
+        $this->set('vino', $vino);
+    }
 
     /**
      * Add method
@@ -137,7 +145,7 @@ class VinosController extends AppController
     public function isAuthorized($user) 
             {
         if (isset($user["role"])and $user["role"] === "usuario"){
-            if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines"]))
+            if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines","viewuser"]))
             {
             return true;
         }

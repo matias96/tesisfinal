@@ -66,8 +66,12 @@
             <p>
               Te brindamos informacion sobre los demas usuarios para que te puedas contactar de manera directa y sin interrupciones
             </p>
-          <?= $this->html->link("Administrar Usuarios",["controller"=>"users","action"=>"index",],["class" =>"btn btn-default btn-sm"]) ?>
-         <?= $this->html->link("Usuarios",["controller"=>"users","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
+<?php if (isset($current_user["role"]) and $current_user["role"] === "admin"):?>
+            <?= $this->html->link("Administrar Usuarios",["controller"=>"users","action"=>"index",],["class" =>"btn btn-default btn-sm"]) ?>
+
+<?php endif;?>
+            <?= $this->html->link("Usuarios",["controller"=>"users","action"=>"solover",],["class" =>"btn btn-default btn-sm"]) ?>
+         
           </div>
         </div>
       </div>

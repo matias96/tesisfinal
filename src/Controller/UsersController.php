@@ -38,7 +38,14 @@ class UsersController extends AppController
          $this->Auth->allow(["add"]);
     }
 
-    
+          public function viewuser($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => ['Vinos']
+        ]);
+
+        $this->set('user', $user);
+    }
      
     public function index()
     {
@@ -154,7 +161,7 @@ class UsersController extends AppController
     public function isAuthorized($user) 
             {
         if (isset($user["role"])and $user["role"] === "usuario"){
-            if(in_array($this -> request -> action, ["solover","logout","menu","add","transferswines","view"]))
+            if(in_array($this -> request -> action, ["solover","logout","menu","add","transferswines","view","viewuser"]))
             {
             return true;
         }
