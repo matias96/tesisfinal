@@ -3,7 +3,21 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <?= $this -> Html -> css("menu")?>
+<?= $this -> Html -> css("transferswines")?>
+<?php if (isset($current_user["role"]) and $current_user["role"] === "admin"):?>
 
+<li>
+          <div class="price color-1-font"><span class="total">Bienvenido Administrador</span></div>
+         
+ </li>
+<?php endif;?>
+<?php if (isset($current_user["role"]) and $current_user["role"] === "usuario"):?>
+
+<li>
+          <div class="price color-1-font"><span class="total">Bienvenido</span></div>
+         
+ </li>
+<?php endif;?>
 <div class="container">
   <div class="iconcontainer">
     <div class="row">
@@ -80,17 +94,10 @@
 </div>
 
 <li>
-      <div class="circle">
-        <div class="front front-popular">
-          <div class="title color-1-font glyphicon glyphicon-star"></div>
+      
           <div class="price color-1-font"><span class="total">Transfers Wines</span></div>
-          <div class="description"></div>
-        </div><!-- end div .front -->
-        <div class="popular color-1-font glyphicon glyphicon-star"></div>
-        <div class="back color-1-bg info">
-          <div class="title">Misión</div>
-          <div class="description">
-            <p>Promover la compra-venta de vino a granel y/o fraccionado a través de un sistema Web, lo que permitirá una mayor oferta y demanda dentro del rubro vitivinícola en el área local y poder comparar fácilmente todos los vinos disponibles en el mercado</p>
+          
+            <h3>Promover la compra-venta de vino a granel y/o fraccionado a través de un sistema Web, lo que permitirá una mayor oferta y demanda dentro del rubro vitivinícola en el área local y poder comparar fácilmente todos los vinos disponibles en el mercado<h3>
      
           </div><!-- end div .description -->
         </div><!-- end div .back color-1-bg info -->

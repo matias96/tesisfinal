@@ -46,7 +46,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="top-bar-section">
             <?php if(isset($current_user)): ?>
             <ul class="right">
-                <li>Hola <?= $current_user["nombre"] ?> <li>
+                <li> <?= $current_user["nombre"] ?> <li>
                 <li><?= $this->html->link ("Cerrar Sesion",["controller"=>"users","action"=> "logout"]) ?> </li>
                   <li><?= $this->html->link ("Menu",["controller"=>"users","action"=> "menu"]) ?> </li>
                 
