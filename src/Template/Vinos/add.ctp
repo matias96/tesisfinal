@@ -50,7 +50,6 @@
             echo $this->Form->control('extracto_seco');
             echo $this->Form->control('grado_brix');
             echo $this->Form->control('año_elavoracion');
-            echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Crear')) ?>

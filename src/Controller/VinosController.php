@@ -72,14 +72,15 @@ class VinosController extends AppController
         $vino = $this->Vinos->newEntity();
         if ($this->request->is('post')) {
             $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
+            $vino->user_id= $this->Auth->user("id") ;
             if ($this->Vinos->save($vino)) {
-                $this->Flash->success(__('The vino has been saved.'));
+                $this->Flash->success(__('Vino guardado correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The vino could not be saved. Please, try again.'));
+            $this->Flash->error(__('Error al guardar vino.'));
         }
-        $users = $this->Vinos->Users->find('list', ['limit' => 200]);
+        $users = ["user"=> $this->Auth->user("id")];
         $this->set(compact('vino', 'users'));
     }
  public function adduser()

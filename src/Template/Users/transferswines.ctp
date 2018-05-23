@@ -58,7 +58,7 @@
         <div class="back color-3-bg info">
           <div class="title">Lugar</div>
           <div class="description">
-            <p>Nos encontramos al 530 de la calle 25 de Mayo, San Martin, Mendoza</p>
+            <p>Nos encontramos al 598 de la calle 25 de Mayo, San Martin, Mendoza</p>
           </div><!-- end div .description -->
         </div><!-- end div .back color-3-bg info -->
       </div><!-- end div .circle -->
@@ -84,4 +84,23 @@
   <!-- END LIST ELEMENT -->
   </ul>
 <!--END LIST -->
+</section>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<section id="contact">
+  <div class="container">
+    <div class="well well-sm">
+      <h3><strong>UBICACIÓN</strong></h3>
+    </div>
+	
+	<div class="row">
+	  <div class="col-md-7">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.728503841346!2d-68.47830978519406!3d-33.089926580878696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e431e1cdd17a5%3A0xccff2249ca35e067!2sInstituto+San+Vicente+de+Paul!5e0!3m2!1ses!2sar!4v1527051267061" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe> </div>
+
+    </div>
+  </div>
 </section>
