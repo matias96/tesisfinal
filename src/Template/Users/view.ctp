@@ -56,7 +56,8 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Vinos') ?></h4>
+        <h4><?= __('Vinos subidos por') ?></h4>
+            <h3><?= h($user->nombre) ?></h3>
         <?php if (!empty($user->vinos)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>

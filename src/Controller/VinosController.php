@@ -37,6 +37,17 @@ class VinosController extends AppController
 
         $this->set(compact('vinos'));
     }
+    
+    public function misvinos()
+    {
+        $this->paginate = [
+            'conditions' => ["user_id" => $this->Auth->user("id")]
+        ];
+        $vinos = $this->paginate($this->Vinos);
+
+        $this->set(compact('vinos'));
+        
+    }
 
     /**
      * View method
@@ -119,7 +130,7 @@ class VinosController extends AppController
             }
             $this->Flash->error(__('The vino could not be saved. Please, try again.'));
         }
-        $users = $this->Vinos->Users->find('list', ['limit' => 200]);
+        $users = ["user"=> $this->Auth->user("id")];
         $this->set(compact('vino', 'users'));
     }
 
@@ -146,7 +157,7 @@ class VinosController extends AppController
     public function isAuthorized($user) 
             {
         if (isset($user["role"])and $user["role"] === "usuario"){
-            if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines","viewuser"]))
+            if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines","viewuser","misvinos","edit","delete"]))
             {
             return true;
         }

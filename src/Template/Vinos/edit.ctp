@@ -7,15 +7,20 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Acciones') ?></li>
-        <li><?= $this->Form->postLink(
+        
+        <?php if (isset($current_user["role"]) and $current_user["role"] === "admin"):?>
+
+        <li><?= $this->Html->link(__('Lista de Vinos'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+<?php endif;?>
+        
+     <li><?= $this->Form->postLink(
                 __('Borrar'),
                 ['action' => 'delete', $vino->id_vino],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $vino->id_vino)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('Lista de Vinos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="vinos form large-9 medium-8 columns content">
@@ -34,7 +39,6 @@
             echo $this->Form->control('extracto_seco');
             echo $this->Form->control('grado_brix');
             echo $this->Form->control('año_elavoracion');
-            echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Editar')) ?>
