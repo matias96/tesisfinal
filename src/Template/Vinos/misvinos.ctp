@@ -7,9 +7,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Acciones') ?></li>
-        <li><?= $this->Html->link(__('Nuevo Vino'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'solover']) ?></li>
-        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Vino'), ['controller' => 'Vinos', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Vinos Reservados'), ['controller' => 'Vinos', 'action' => 'reservas']) ?></li>
     </ul>
 </nav>
 <div class="vinos index large-9 medium-8 columns content">

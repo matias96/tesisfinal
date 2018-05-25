@@ -115,6 +115,22 @@ class VinosTable extends Table
             ->integer('año_elavoracion')
             ->requirePresence('año_elavoracion', 'create')
             ->notEmpty('año_elavoracion');
+        
+        $validator
+            ->integer('reservado')
+            ->requirePresence('año_elavoracion', 'create')
+            ->notEmpty('año_elavoracion');
+        
+        $validator
+            ->scalar('nombre_reserva')
+            ->maxLength('nombre_reserva', 255)
+            ->requirePresence('nombre_reserva', 'create')
+            ->notEmpty('nombre_reserva');
+        
+        $validator
+            ->integer('telefono')
+            ->requirePresence('año_elavoracion', 'create')
+            ->notEmpty('año_elavoracion');
 
         return $validator;
     }

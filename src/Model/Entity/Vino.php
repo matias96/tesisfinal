@@ -49,6 +49,9 @@ class Vino extends Entity
         'grado_brix' => true,
         'año_elavoracion' => true,
         'user_id' => true,
+        'reservado' => true,
+        'nombre_reserva' => true,
+        'telefono' => true,
         'created' => true,
         'modified' => true,
         'user' => true

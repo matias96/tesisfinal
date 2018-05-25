@@ -50,6 +50,7 @@
             <p>
               Comparti tus vinos con los demas usuarios y danos a conocer la calidad de tus productos
             </p>
+            <?= $this->html->link("Vinos Reservados",["controller"=>"vinos","action"=>"reservas",],["class" =>"btn btn-default btn-sm"]) ?>
             <?= $this->html->link("Mis Vinos",["controller"=>"vinos","action"=>"misvinos",],["class" =>"btn btn-default btn-sm"]) ?>
             <?= $this->html->link("Crear Nuevo",["controller"=>"vinos","action"=>"add",],["class" =>"btn btn-default btn-sm"]) ?>
             

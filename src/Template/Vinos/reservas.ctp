@@ -7,13 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Acciones') ?></li>
-        <li><?= $this->Html->link(__('Nuevo Vino'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'solover']) ?></li>
-        <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Vino'), ['controller' => 'Vinos', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Mis Vinos'), ['controller' => 'Vinos', 'action' => 'misvinos']) ?></li>
     </ul>
 </nav>
 <div class="vinos index large-9 medium-8 columns content">
-    <h3><?= __('Vinos') ?></h3>
+    <h3><?= __('Vinos Reservados') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -21,23 +20,30 @@
                 <th scope="col"><?= $this->Paginator->sort('variedad') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('procedencia') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('volumen') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('año_elavoracion') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Reservado por:') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('telefono') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($vinos as $vino): ?>
             <tr>
-                <td><?= h($vino->tipo_producto) ?></td>
+                <?php if (isset($vino["reservado"]) and $vino["reservado"] === 1):?>
+
+<li>
+          <td><?= h($vino->tipo_producto) ?></td>
                 <td><?= h($vino->variedad) ?></td>
                 <td><?= h($vino->procedencia) ?></td>
                 <td><?= $this->Number->format($vino->volumen) ?></td>
-                <td><?= $this->Number->format($vino->año_elavoracion) ?></td>
-                <td><?= $vino->has('user') ? $this->Html->link($vino->user->username, ['controller' => 'Users', 'action' => 'viewuser', $vino->user->id]) : '' ?></td>
+                <td><?= h($vino->nombre_reserva) ?></td>
+                <td><?= $this->Number->format($vino->telefono) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver Detalles'), ['action' => 'viewuser', $vino->id_vino]) ?>
-                    <?= $this->Html->link(__('Reservar Vino'), ['action' => 'formularioreserva', $vino->id_vino]) ?>
+                    <?= $this->Html->link(__('Ver Detalles.....'), ['action' => 'viewuser', $vino->id_vino]) ?>
+                    <?= $this->Form->postLink(__('Eliminar Vino'), ['action' => 'delete', $vino->id_vino], ['confirm' => __('Are you sure you want to delete # {0}?', $vino->id_vino)]) ?>
                 </td>
+         
+ </li>
+<?php endif;?>
+                
                 </tr>
             <?php endforeach; ?>
         </tbody>

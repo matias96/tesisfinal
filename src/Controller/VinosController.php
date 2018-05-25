@@ -48,6 +48,17 @@ class VinosController extends AppController
         $this->set(compact('vinos'));
         
     }
+    
+    public function reservas()
+    {
+        $this->paginate = [
+            'conditions' => ["user_id" => $this->Auth->user("id")]
+        ];
+        $vinos = $this->paginate($this->Vinos);
+
+        $this->set(compact('vinos'));
+        
+    }
 
     /**
      * View method
@@ -133,6 +144,25 @@ class VinosController extends AppController
         $users = ["user"=> $this->Auth->user("id")];
         $this->set(compact('vino', 'users'));
     }
+    
+    public function formularioreserva($id = null)
+    {
+        $vino = $this->Vinos->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
+            $vino->reservado= 1;      
+            if ($this->Vinos->save($vino)) {
+                $this->Flash->success(__('The vino has been saved.'));
+
+                return $this->redirect(['action' => 'solover']);
+            }
+            $this->Flash->error(__('The vino could not be saved. Please, try again.'));
+        }
+        $users = ["user"=> $this->Auth->user("id")];
+        $this->set(compact('vino', 'users'));
+    }
 
     /**
      * Delete method
@@ -157,7 +187,7 @@ class VinosController extends AppController
     public function isAuthorized($user) 
             {
         if (isset($user["role"])and $user["role"] === "usuario"){
-            if(in_array($this -> request -> action, ["solover","logout","home","add","transferswines","viewuser","misvinos","edit","delete"]))
+            if(in_array($this -> request -> action, ["solover","formularioreserva","reservas","logout","home","add","transferswines","viewuser","misvinos","edit","delete"]))
             {
             return true;
         }
