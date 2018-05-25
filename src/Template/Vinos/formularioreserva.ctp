@@ -15,12 +15,7 @@
         <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?></li>
 <?php endif;?>
         
-     <li><?= $this->Form->postLink(
-                __('Borrar'),
-                ['action' => 'delete', $vino->id_vino],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $vino->id_vino)]
-            )
-        ?></li>
+     <li><li><?= $this->Html->link(__('Volver'), ['controller' => 'Vinos', 'action' => 'solover']) ?> </li></li>
     </ul>
 </nav>
 <div class="vinos form large-9 medium-8 columns content">

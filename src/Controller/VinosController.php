@@ -95,6 +95,9 @@ class VinosController extends AppController
         if ($this->request->is('post')) {
             $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
             $vino->user_id= $this->Auth->user("id") ;
+            $vino->reservado= 0;
+            $vino->nombre_reserva= "";
+            $vino->telefono= 0;
             if ($this->Vinos->save($vino)) {
                 $this->Flash->success(__('Vino guardado correctamente.'));
 
@@ -135,11 +138,11 @@ class VinosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
             if ($this->Vinos->save($vino)) {
-                $this->Flash->success(__('The vino has been saved.'));
+                $this->Flash->success(__('Vino editado correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The vino could not be saved. Please, try again.'));
+            $this->Flash->error(__('No se pudo editar el vino, intente nuevamente.'));
         }
         $users = ["user"=> $this->Auth->user("id")];
         $this->set(compact('vino', 'users'));
@@ -154,11 +157,11 @@ class VinosController extends AppController
             $vino = $this->Vinos->patchEntity($vino, $this->request->getData());
             $vino->reservado= 1;      
             if ($this->Vinos->save($vino)) {
-                $this->Flash->success(__('The vino has been saved.'));
+                $this->Flash->success(__('Vino reservado exitosamente.'));
 
                 return $this->redirect(['action' => 'solover']);
             }
-            $this->Flash->error(__('The vino could not be saved. Please, try again.'));
+            $this->Flash->error(__('Vino no reservado, intente nuevamente.'));
         }
         $users = ["user"=> $this->Auth->user("id")];
         $this->set(compact('vino', 'users'));
@@ -176,9 +179,9 @@ class VinosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $vino = $this->Vinos->get($id);
         if ($this->Vinos->delete($vino)) {
-            $this->Flash->success(__('The vino has been deleted.'));
+            $this->Flash->success(__('Vino eliminado correctamente.'));
         } else {
-            $this->Flash->error(__('The vino could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Vino no eliminado, intente nuevamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

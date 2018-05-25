@@ -35,7 +35,7 @@
                 <td><?= $this->Number->format($vino->año_elavoracion) ?></td>
                 <td><?= $vino->has('user') ? $this->Html->link($vino->user->username, ['controller' => 'Users', 'action' => 'viewuser', $vino->user->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver Detalles'), ['action' => 'viewuser', $vino->id_vino]) ?>
+                    <?= $this->Html->link(__('Ver Detalles....'), ['action' => 'viewuser', $vino->id_vino]) ?>
                     <?= $this->Html->link(__('Reservar Vino'), ['action' => 'formularioreserva', $vino->id_vino]) ?>
                 </td>
                 </tr>
